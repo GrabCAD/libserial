@@ -25,11 +25,11 @@ def main():
     # build system.
     #
     build_file = "libserial.sbf"
-    logging.info( "Build file is " + build_file )
+    logging.info(f"Build file is {build_file}")
     #
     # Get the configuration information for the local SIP installation.
     #
-    logging.info( "Reading sip configuration." ) 
+    logging.info( "Reading sip configuration." )
     config = sipconfig.Configuration()
     config.qt_framework = None
     #
@@ -40,7 +40,7 @@ def main():
                               "-e",
                               "-b", build_file,
                               "@srcdir@/libserial.sip" ] )
-    logging.info( "Running sip command: '" + sip_command + "'" )
+    logging.info(f"Running sip command: '{sip_command}'")
     os.system( sip_command )
     #
     # Create the Makefile with threading support as the libserial libraries

@@ -22,7 +22,7 @@ def main():
     parser = create_options_parser()
     (options, arguments) = parser.parse_args()
     #
-    logging.info( "Opening serial port " + options.device )
+    logging.info(f"Opening serial port {options.device}")
     serial_port = SerialPort( options.device )
     serial_port.Open( SerialPort.BAUD_DEFAULT, 
                       SerialPort.CHAR_SIZE_DEFAULT, 
